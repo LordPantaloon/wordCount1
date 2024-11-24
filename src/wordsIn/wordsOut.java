@@ -6,6 +6,7 @@ public class wordsOut {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        //Konstruktor
         wordsIn wordsIn = new wordsIn();
 
         System.out.println("Varsegod och skriv in ord! Avsluta med 'stop'.");
@@ -14,22 +15,15 @@ public class wordsOut {
         while (true) {
             String input = scan.nextLine();
 
-            if (input.equalsIgnoreCase("stop")) {
+            if (wordsIn.checkStop(input)) {
                 break;
             }
             wordsIn.lineCount();
             wordsIn.wordCount(input);
             wordsIn.charCount(input);
-
-
-
-
         }
         //Skriver ut de olika variablerna
-        wordsIn.printLineCount();
-        wordsIn.printWordCount();
-        wordsIn.printCharCount();
-
+        wordsIn.printAll();
 
     }
 }
