@@ -1,3 +1,4 @@
+
 package wordsIn;
 
 import org.junit.Test;
@@ -29,11 +30,9 @@ public class wordsInTest {
         //Skapar ett nytt objekt som hämtar från wordsIn
         wordsIn testarHej = new wordsIn();
 
-        //Sätter värdet till "hej"
-        testarHej.setWords("hej");
-
         //Värdet som vi får
-        String actual = testarHej.getOrd();
+        //Hämtar ordet som användare skrivit in (user input är i detta fallet simulerat av testfallet)
+        String actual = testarHej.wordCount("hej");
 
         //Värdet vi förväntar oss att få
         String expected = "hej";
@@ -41,14 +40,20 @@ public class wordsInTest {
 
 
     }
+
+
+    //detta testfallet testar metoden charcount
     @Test
     public void charCountTest() {
         //Skapar ett nytt objekt som hämtar från wordsIn
         wordsIn charTest = new wordsIn();
-        int actual = charTest.lineCount();
+        //testfallet matar in input (iomed programmet e beroende på user input så simulerar vi det med .setText
+        charTest.setText("hej");
+        //Här hämtar vi det inmatade värdet och retunerar det
+        int actual= charTest.charCount();
 
         //Värdet vi förväntar oss att få
-        int expected = 1;
+        int expected = 3;
         assertEquals(expected, actual);
     }
 

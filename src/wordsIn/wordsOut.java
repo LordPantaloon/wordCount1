@@ -20,7 +20,7 @@ public class wordsOut {
             }
             wordsIn.lineCount();
             wordsIn.wordCount(input);
-            wordsIn.charCount(input);
+            wordsIn.charCount(Integer.parseInt(input));
         }
         //Skriver ut de olika variablerna
         wordsIn.printAll();

@@ -8,6 +8,7 @@ public class wordsIn {
     private int characters = 0;
     public String ord;
     private String longWord = "";
+    private String lastInput;
 
     public int lineCount() {
         //Ökar antalet rader med 1 med varje input
@@ -15,13 +16,24 @@ public class wordsIn {
         return lines;
     }
 
-    public int charCount(String input) {
-        //Ökar antal bokstäver
-        characters += input.length();
+    //lagrar senaste inmatade variabeln,den tar emot input och spara det i lastInput.
+    public void setText(String input) {
+        this.lastInput = input;
+    }
+
+    public int charCount() {
+        // Använd den senaste inmatade texten
+        characters += lastInput.length();
         return characters;
     }
 
-    public int wordCount(String input) {
+    public int charCount(int input) {
+        //Ökar antal bokstäver
+        characters += input;
+        return characters;
+    }
+
+    public String wordCount(String input) {
         //Ökar antal ord
         //Delar på en string där det finns mellanslag
         String[] wordsLength = input.split("\\s+");
@@ -33,7 +45,8 @@ public class wordsIn {
                 longWord = word;
             }
         }
-        return words;
+        //return words;
+        return input;
     }
 
     public boolean checkStop(String input) {
@@ -51,7 +64,9 @@ public class wordsIn {
     }
 
 
-    public String getOrd() {
+
+
+   /* public String getOrd() {
         //retunerar ord för testfall.
         return ord;
     }
@@ -59,7 +74,5 @@ public class wordsIn {
     public void setWords(String ord) {
         //Sätter ord för testfall.
         this.ord = ord;
-    }
+    } */
 }
-
-
