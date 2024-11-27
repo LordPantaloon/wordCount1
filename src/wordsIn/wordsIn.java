@@ -8,7 +8,7 @@ public class wordsIn {
     private int characters = 0;
     public String ord;
     private String longWord = "";
-    private String lastInput;
+    private String lastInput = "";
 
     public int lineCount() {
         //Ökar antalet rader med 1 med varje input
@@ -18,18 +18,15 @@ public class wordsIn {
 
     //lagrar senaste inmatade variabeln,den tar emot input och spara det i lastInput.
     public void setText(String input) {
-        this.lastInput = input;
+
+        lastInput = input;
     }
 
     public int charCount() {
-        // Använd den senaste inmatade texten
-        characters += lastInput.length();
-        return characters;
-    }
-
-    public int charCount(int input) {
-        //Ökar antal bokstäver
-        characters += input;
+        // Räkna tecken i senaste texten, om den finns
+        if (lastInput != null) {
+            characters += lastInput.length();
+        }
         return characters;
     }
 

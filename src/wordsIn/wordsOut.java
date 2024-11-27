@@ -18,9 +18,10 @@ public class wordsOut {
             if (wordsIn.checkStop(input)) {
                 break;
             }
+            wordsIn.setText(input); // Uppdaterar senaste texten
             wordsIn.lineCount();
             wordsIn.wordCount(input);
-            wordsIn.charCount(Integer.parseInt(input));
+            wordsIn.charCount();
         }
         //Skriver ut de olika variablerna
         wordsIn.printAll();
